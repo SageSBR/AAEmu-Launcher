@@ -23,7 +23,7 @@ namespace AAEmu.Launcher
     public partial class LauncherForm : Form
     {
 
-        const string urlCheckLauncherUpdate = "https://raw.githubusercontent.com/ZeromusXYZ/AAEmu-Launcher/master/update.ver";
+        const string urlCheckLauncherUpdate = "https://raw.githubusercontent.com/SageSBR/AAEmu-Launcher/master/update.ver";
         string AppVersion = "?.?.?.?";
 
         public enum ShowPanelType
@@ -59,7 +59,7 @@ namespace AAEmu.Launcher
             public string PathToGame { get; set; } = string.Empty;
 
             [JsonProperty("serverIPAddress", NullValueHandling = NullValueHandling.Ignore)]
-            public string ServerIpAddress { get; set; } = "127.0.0.1";
+            public string ServerIpAddress { get; set; } = "5.252.24.190";
 
             [JsonProperty("saveLoginAndPassword", NullValueHandling = NullValueHandling.Ignore)]
             public bool SaveLoginAndPassword { get; set; } = false;
@@ -121,9 +121,9 @@ namespace AAEmu.Launcher
                 setting.Lang = settingsLangEN_US;
                 setting.LauncherLang = settingsLangEN_US;
                 setting.PathToGame = "";
-                setting.ServerIpAddress = "127.0.0.1";
+                setting.ServerIpAddress = "5.252.24.190";
                 setting.SaveLoginAndPassword = false;
-                setting.SkipIntro = false;
+                setting.SkipIntro = true;
                 setting.HideSplashLogo = false;
                 setting.LastLoginUser = "";
                 setting.LastLoginPass = "";
@@ -132,7 +132,7 @@ namespace AAEmu.Launcher
                 setting.AllowGameUpdates = false;
                 setting.ServerGameUpdateURL = "";
                 setting.ServerWebSiteURL = ""; // "https://aaemu.info/api/articles";
-                setting.ServerNewsFeedURL = "";
+                setting.ServerNewsFeedURL = "https://loja4team.site/cdn/news/";
                 setting.UserHistory = new List<string>();
             }
 
@@ -437,8 +437,6 @@ namespace AAEmu.Launcher
         static public string launcherProtocolSchema = "aelcf";
         static public string urlAAEmuGitHub = "https://github.com/AAEmu/AAEmu";
         static public string urlLauncherGitHub = "https://github.com/ZeromusXYZ/AAEmu-Launcher";
-        static public string urlAAEmuDiscordInvite = "https://discord.gg/vn8E8E6";
-        static public string urlLauncherDiscordInvite = "https://discord.gg/GhVfDtK";
         static public string urlWebsite = "https://github.com/AAEmu/AAEmu"; // "https://aaemu.info/";
         static public string dx9downloadURL = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=35";
         string localPatchFolderName = ".patch" + Path.DirectorySeparatorChar;
@@ -452,10 +450,10 @@ namespace AAEmu.Launcher
 
 
         // launcher protocol indentifiers
-        private const string stringMailRu_1_0 = "mailru_1_0";
+        //private const string stringMailRu_1_0 = "mailru_1_0";
         private const string stringTrino_1_2 = "trino_1_2";
-        private const string stringTrino_3_5 = "trino_3_5";
-        private const string stringTrino_6_0 = "trino_6_0";
+        //private const string stringTrino_3_5 = "trino_3_5";
+        //private const string stringTrino_6_0 = "trino_6_0";
 
         // Stuff for dragable form
         private bool formMouseDown;
@@ -3701,15 +3699,6 @@ namespace AAEmu.Launcher
             Process.Start(urlLauncherUpdateDownload);
         }
 
-        private void AaEmuDiscordMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start(urlAAEmuDiscordInvite);
-        }
-
-        private void LauncherDiscordMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start(urlLauncherDiscordInvite);
-        }
 
         private void CustomServerDiscordMenuItem_Click(object sender, EventArgs e)
         {
